@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "series_dramas_shows",
+  "info": {
+    "singularName": "series-dramas-show",
+    "pluralName": "series-dramas-shows",
+    "displayName": "Series - Dramas - Shows",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sdt_name": {
+      "type": "string",
+      "minLength": 3,
+      "required": true
+    },
+    "sdt_subname": {
+      "type": "string",
+      "required": true
+    },
+    "sdt_release_date": {
+      "type": "date",
+      "required": true
+    },
+    "sdt_trailer": {
+      "type": "text",
+      "required": false,
+      "default": "Trailer: m3u8 | mpeg | embed => youtube, dmCloud"
+    },
+    "genres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::genre.genre"
+    },
+    "vod_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vod-category.vod-category"
+    },
+    "sdt_poster": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sdt_cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sdt_description": {
+      "type": "richtext",
+      "required": true
+    },
+    "age_rating": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::age-rating.age-rating"
+    },
+    "sdt_playlist_dm": {
+      "type": "string",
+      "required": true
+    },
+    "sdt_playlist_yt": {
+      "type": "string",
+      "required": true
+    },
+    "age_ratings": {
+      "type": "dynamiczone",
+      "components": [
+        "age-rating.age-rating"
+      ]
+    }
+  }
+}

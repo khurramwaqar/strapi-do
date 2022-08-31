@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_age_rating_age_ratings",
+  "info": {
+    "displayName": "Age Rating",
+    "icon": "blind",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "age_name": {
+      "type": "string"
+    },
+    "age_label": {
+      "type": "string",
+      "required": true
+    },
+    "allow_regions": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

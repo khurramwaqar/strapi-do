@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banners",
+  "info": {
+    "singularName": "banner",
+    "pluralName": "banners",
+    "displayName": "Banners",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banner_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "banner_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "banner_type": {
+      "type": "enumeration",
+      "enum": [
+        "Live",
+        "Series ID",
+        "Single Video",
+        "Embed Live",
+        "Embed Single Video",
+        "Embed Series ID"
+      ],
+      "required": true
+    },
+    "apps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app.app"
+    },
+    "banner_button_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "allow_only": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

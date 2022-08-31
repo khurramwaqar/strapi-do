@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apps",
+  "info": {
+    "singularName": "app",
+    "pluralName": "apps",
+    "displayName": "App",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "app_name": {
+      "type": "string",
+      "default": "App Name",
+      "required": true,
+      "minLength": 1,
+      "maxLength": 100,
+      "pluginOptions": {}
+    },
+    "app_package_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 150,
+      "required": true,
+      "pluginOptions": {}
+    },
+    "app_os": {
+      "type": "enumeration",
+      "enum": [
+        "Android",
+        "iOS",
+        "Web",
+        "SmartTV"
+      ],
+      "required": true,
+      "pluginOptions": {}
+    },
+    "app_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {}
+    },
+    "app_adsmanager": {
+      "type": "json",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "allow_only": {
+      "type": "json",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

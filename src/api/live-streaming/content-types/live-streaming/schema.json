@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "live_streamings",
+  "info": {
+    "singularName": "live-streaming",
+    "pluralName": "live-streamings",
+    "displayName": "Live Streaming",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "apps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app.app"
+    },
+    "live_stream_name": {
+      "type": "string",
+      "required": true
+    },
+    "live_stream_ads": {
+      "type": "text",
+      "required": true,
+      "minLength": 10
+    },
+    "live_stream_poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "live_stream_cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
